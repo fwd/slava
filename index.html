@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Slava.to - #Ukraine</title>
+  <link rel="stylesheet" href="./style.css">
+  <!-- No tracking on this website. Not during war. -->
+</head>
+<body>
+<div class="container">
+
+   <svg xmlns="http://www.w3.org/2000/svg" id="svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMin slice" viewBox="0 0 640 360" aria-labelledby="title desc">
+      <!-- Title -->  
+      <title id="title">Ukrainian flag</title>
+      <!-- Description -->  
+      <desc>Ukrainian flag waving</desc>
+      <defs>
+         <style type="text/css">
+            /* Style your SVG here */
+            <![CDATA[
+               @import url("https://fonts.googleapis.com/css?family=Raleway"); /* Link your Google font here */
+               text{ /* Text global style here */
+                 font-family: "Raleway", sans-serif; /* Declare google font and fall-back font style here */
+                 text-transform: none; /* Text upper/lower case */
+                 font-weight: 500; /* Text weight */
+                 font-size: 18px; /* Text size */
+                 fill: #0066cc; /* Text color */
+               }
+               #bg{ /* Background color */
+                 fill: #1D293B;
+               }
+               #flagTop{ 
+                 fill: none; /* No fill! Important! */
+                 stroke: #0066cc; /* Flag top stripe color */
+                 stroke-width: 91.5; /* Flag top stripe height */
+               }
+               #flagBot{ 
+                 fill: none; /* No fill! Important! */
+                 stroke: #ffcc00; /* Flag bottom stripe color */
+                 stroke-width: 91.5; /* Flag bottom stripe height */
+               }
+               #flagTopPole{ 
+                 fill: #0066cc; /* Flag top stripe color on pole  */
+               }
+               #flagBotPole{ 
+                 fill: #ffcc00; /* Flag bottom stripe color on pole */
+               }
+               .flagPole{ 
+                 fill: #B2B2B2; /* Flag pole color */
+               }
+               #svg{
+                 width: 100%; /* Make SVG responsive for Internet Explorer */
+                 padding-bottom: 56.1%; /* SVG bottom hack for Internet Explorer */
+                 height: 1px; /* SVG bottom hack for Internet Explorer */
+                 overflow: visible; /* For Mozilla Firefox if using SVG bottom hack for Internet Explorer */
+                 visibility: hidden; /* To avoid CPU overload. Make SVG visible again with JavaScript onload */
+               }  
+               ]]>
+         </style>
+      </defs>
+      <!-- Link to GreenSock TweenMax -->
+      <script type="text/javascript" xlink:href="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+      <!-- JavaScript -->
+      <script type="text/javascript">
+         <![CDATA[
+           	// Intialize composition at page load
+          	document.addEventListener("DOMContentLoaded", function(event) {
+              window.onload = function() {
+                
+                // Declare variables
+                var svg, flagTop, flagBot, flagGroup, pole, zoom, mainTl, tl1, tl2, tl3, tl4, tl5, tl6;
+                
+                // Set object references
+                svg = document.getElementById("svg");
+                flagTop = document.getElementById("flagTop");
+                flagBot = document.getElementById("flagBot");
+                flagGroup = document.getElementById("flagGroup");
+                zoom = document.getElementById("zoom");
+                pole = document.getElementById("pole");
+                
+                // Set animation preferences
+                
+                // Set SVG visibility to visible
+                TweenMax.set(svg, {
+                  visibility: "visible"
+                });
+                
+                // Set flag initial position
+                TweenMax.set(flagGroup, {
+                  transformOrigin: "40% 100%",
+                  rotation: 5,
+                  y: 60
+                });
+                
+                // Create main timeline
+                mainTl = new TimelineMax({
+                  repeat: -1
+                });
+                mainTl.timeScale(3); // Adjust animation speed
+                
+         		// Create function returning sub timeline for flag top stripe
+                function getTl1() {
+                  tl1 = new TimelineMax({
+                    repeat: -1
+                  });
+                  tl1.to(flagTop, 6, {
+                    x: -600,
+                    ease: Linear.easeNone
+                  });
+                  return tl1;
+                }
+                
+         		// Create function returning sub timeline for flag bottom stripe
+                function getTl3() {
+                  tl3 = new TimelineMax({
+                    repeat: -1
+                  });
+                  tl3.to(flagBot, 6, {
+                    x: -600,
+                    ease: Linear.easeNone
+                  });
+                  return tl3;
+                }
+         
+                // Create function returning sub timeline for flag group
+                function getTl4() {
+                  tl4 = new TimelineMax({
+                    repeat: -1
+                  });
+                  tl4.to(flagGroup, 6, {
+                    rotation: 15,
+                    y: 75,
+                    x: 10,
+                    ease: Sine.easeInOut
+                  });
+                  tl4.to(flagGroup, 6, {
+                    rotation: 5,
+                    y: 60,
+                    x: 0,
+                    ease: Sine.easeInOut
+                  });
+                  return tl4;
+                }
+         
+                // Create function returning sub timeline for pole
+                function getTl5() {
+                  tl5 = new TimelineMax({
+                    repeat: -1
+                  });
+                  tl5.to(pole, .5, {
+                    y: -13,
+                    ease: Linear.easeNone
+                  });
+                  tl5.to(pole, .5, {
+                    y: -26,
+                    ease: Linear.easeNone
+                  });
+                  tl5.to(pole, .5, {
+                    y: -33,
+                    ease: Linear.easeNone
+                  });
+                  tl5.to(pole, .5, {
+                    y: -35,
+                    ease: Linear.easeNone
+                  });
+                  tl5.to(pole, .5, {
+                    y: -33,
+                    ease: Linear.easeNone
+                  });
+                  tl5.to(pole, .5, {
+                    y: -27,
+                    ease: Linear.easeNone
+                  });
+                  tl5.to(pole, .5, {
+                    y: -15,
+                    ease: Linear.easeNone
+                  });
+                  tl5.to(pole, .5, {
+                    y: 0,
+                    ease: Linear.easeNone
+                  });
+                  tl5.to(pole, .5, {
+                    y: 8,
+                    ease: Linear.easeNone
+                  });
+                  tl5.to(pole, .5, {
+                    y: 11,
+                    ease: Linear.easeNone
+                  });
+                  tl5.to(pole, .5, {
+                    y: 9,
+                    ease: Linear.easeNone
+                  });
+                  tl5.to(pole, .5, {
+                    y: 1,
+                    ease: Linear.easeNone
+                  });
+                  return tl5;
+                }
+         		
+                // Create function returning sub timeline for flag zoom
+                function getTl6() {
+                  tl6 = new TimelineMax({
+                    repeat: -1
+                  });
+                  tl6.to(zoom, 6, {
+                    attr:{viewBox:"-30 -30 740 460"},
+                    ease: Sine.easeInOut
+                  });
+                  tl6.to(zoom, 6, {
+                    attr:{viewBox:"0 0 640 360"},
+                    ease: Sine.easeInOut
+                  });
+                  return tl6;
+                }
+                 
+                //Make the animation happen on page load
+                function init() {
+                  //Add sub timelines to main timeline
+                  mainTl.add(getTl1(), 0).add(getTl3(), 0).add(getTl4(), 0).add(getTl5(), 0).add(getTl6(), 0);
+                }
+                // Intialize main timeline 
+                init();
+                
+              };
+            });
+         ]]>
+      </script> 
+      <!-- SVG content -->
+      <!-- SVG overflow wrapper -->
+      <svg viewBox="0 0 640 360">
+         <!-- Background -->
+         <!-- <path id="bg" d="M0 0h640v360H0z"/> -->   
+         <svg id="zoom" viewBox="0 0 640 360">
+            <!-- Flag group -->
+            <g id="flagGroup">
+               <!-- Flag -->
+               <svg id="flag" width="400" height="300" x="50" y="-10">
+                  <path id="flagTop" d="M0 105c150 0 150 46 300 46s150-46 300-46 150 46 300 46 150-46 300-46"/>
+                  <path id="flagBot" d="M0 197c150 0 150 46 300 46s150-46 300-46 150 46 300 46 150-46 300-46"/>
+               </svg>
+               <!-- Pole -->
+               <g id="pole">
+                  <path class="flagPole" d="M445 70h13v500h-13z"/>
+                  <circle class="flagPole" cx="452" cy="65" r="13"/>
+                  <path id="flagTopPole" d="M444 82h15v94.5h-15z"/>
+                  <path id="flagBotPole" d="M444 175h15v94.5h-15z"/>
+               </g>
+            </g>
+         </svg>
+      </svg>
+   </svg>
+
+</div>
+  
+</body>
+</html>

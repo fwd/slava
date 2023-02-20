@@ -1,0 +1,1 @@
+![https://github.com/fwd/slava/raw/master/.github/banner.png](https://github.com/fwd/slava/raw/master/.github/banner.png)
